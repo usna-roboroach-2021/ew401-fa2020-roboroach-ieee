@@ -1,50 +1,44 @@
-\documentclass{article}
-
-% DO NOT WORRY ABOUT FORMATTING
-% Evangelista will help format for IEEE but with the cover page. If you have an image you want on the cover page let me know. 
-
-% Now also available outside of Overleaf at the following
-% https://github.com/usna-roboroach-2021/ew401-fa2020-roboroach
-
-% Any word on if they prefer IEEE journal format or old ES401?
-% Don't worry about formatting - when the content is in I can
-% do formatting by setting up a style file. 
+\documentclass[onecolumn,10pt]{IEEEtran}
 
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 
-% Can we insert a "pre-title" that says EW401 Final Report?
+% magic formatting lines
+\usepackage{wrcecapstone}
+\hypersetup{
+pdfauthor={Alexis Pak and Brooklyn Pritchard},
+pdftitle={The RoboRoach},
+pdfsubject={weapons, robotics, and control engineering},
+pdfkeywords={Blaberus, Periplaneta, robot, biomechanics, neuromechanics, neurophysiology}
+}
+\usepackage{wrcetitlepage}
+\coursenumber{EW402}
+\student{MIDN 1/C A.~Pak and MIDN 1/C B.~Pritchard}
+\advisor{Assistant Professor D. Evangelista}
+%\coverpicture{\includegraphics[height=1.88in]{\myroot/figures/problem-statement-1a.png}%
+%\includegraphics[height=1.88in]{\myroot/figures/problem-statement-1b.png}}
+
+\newcommand{\myroot}{.}
+\newcommand{\Blaberus}{\emph{Blaberus}}
+\newcommand{\Periplaneta}{\emph{Periplaneta}}
 
 \title{The RoboRoach}
-\author{Midshipman 1/C Alexis Pak and Midshipman 1/C Brooklyn Pritchard\thanks{Authors are with the Department of Weapons, Robotics, and Control Engineering at the United States Naval Academy}}
-% HOW DO I INCLUDE CONTACT INFO?
+\author{Midshipman 1/C Alexis Pak and Midshipman 1/C Brooklyn Pritchard\thanks{Authors are with the Department of Weapons, Robotics, and Control Engineering at the United States Naval Academy. Addresses for correspondence \emph{m21xxxx} and \emph{m21xxxx} at usna dot edu.}}
+\date{\today}
 
 \begin{document}
+\maketitlepage
 \maketitle
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[scale=0.5]{logo.png}
-
-\label{fig:logo}
-\end{figure}
-
-% INCLUDE AFTER THE FIGURE: 
-    %A Capstone Project Report Submitted to the Faculty of The Weapons, Robotics and Control Engineering Department
-    %United States Naval Academy, Annapolis, Maryland
-
-    %Course:  EW401
-    %Faculty Advisor: Asst Prof Dennis Evangelista
-    %Department Chair: Prof Brad Bishop
-
-    %date comes last
-    \date{September 2020}
-
-\tableofcontents
-
+%\tableofcontents
 \begin{abstract}
  Though our initial goal is to control the movements of a cockroach by creating a neural interface to stimulate it’s antennae, we also have a much broader goal for our project in the WRC department. Our problem statement is: To create a simple and repeatable lab that teaches students the process of scientific inquiry. It must fall under the maximum budget for a lab and teach some state of the art technique for studying organisms. Our four metrics for evaluating our project’s overall performance are simple, short, relevant, and convenient. The design that scored the highest in these metrics was the Build Your Own RoboRoach project. It earned a 2 in simple because though there are some givens with the lab, creating a RoboRoach requires some background knowledge in the major in topics like PWMS, duty cycles, computer vision and more. It earned a 1 in short because we estimated that it would take 5 lab sessions for a Midshipman to complete. It earned a 4 in relevant because it teaches students how to test and create a hypothesis. Lastly, it earned a 3 in convenience because we predicted that a professor could set up this lab within 1 hour.  Our RoboRoach will wear a PCB similar to the Backyard Brains backpack. Our backpack will consist of a TinyPico and a set of electrodes. The TinyPico contains all the individual components needed to execute the same tasks as the Backyard Brains backpack. The user will designate a direction via a game controller which will send the command via bluetooth signal to the backpack, which then sends a current to a specific electrode (left or right) and that electrical stimulation causes the roach to turn left or right. We plan on using Windows as our computing platform with Python and Arduino IDE as our programming languages. After meeting with TSD, we created a comprehensive parts list and determined which items to order and which were already available in-house. After crafting our budget, we estimated a total of \$14,040 for labor, \$14,040 for overhead, and \$614.24 for parts. 
 \end{abstract}
+
+\begin{IEEEkeywords}
+\Blaberus, \Periplaneta, robot, biomechanics, neuromechanics, neurophysiology
+\end{IEEEkeywords}
+
 
 % If it is easier, we can split these into different files to make
 % it quicker to find the right bit to edit too. 
@@ -80,7 +74,7 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.25]{lab.JPEG}
+\includegraphics[scale=0.25]{\myroot/figures/lab.JPEG}
 \caption{WRC Students working on a lab in ES200}
 \label{fig:hollywood}
 \end{figure}
@@ -107,7 +101,7 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.55]{PCC.JPG}
+\includegraphics[scale=0.55]{\myroot/figures/PCC.JPG}
 \caption{Pairwise Comparison Chart}
 \label{fig:pcc}
 \end{figure}
@@ -117,7 +111,7 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.4]{metrics.JPG}
+\includegraphics[scale=0.4]{\myroot/figures/metrics.JPG}
 \caption{Metrics}
 \label{fig:metrics}
 \end{figure}
@@ -139,7 +133,7 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.45]{relatedwork.JPG}
+\includegraphics[scale=0.45]{\myroot/figures/relatedwork.JPG}
 \caption{Summary of Related Work}
 \label{fig:relatedwork}
 \end{figure}
@@ -151,14 +145,14 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.45]{moth.png}
+\includegraphics[scale=0.45]{\myroot/figures/moth.png}
 \caption{Wireless Stimulation of Hawkmoths Conceptual Drawing}
 \label{fig:concept1}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.45]{fbd1.JPG}
+\includegraphics[scale=0.45]{\myroot/figures/fbd1.JPG}
 \caption{Wireless Stimulation of Hawkmoths FBD}
 \label{fig:FBD1}
 \end{figure}
@@ -168,14 +162,14 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.15]{roboroach.png}
+\includegraphics[scale=0.15]{\myroot/figures/roboroach.png}
 \caption{Backyard Brains RoboRoach Kit Conceptual Drawing}
 \label{fig:concept2}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.45]{fbd2.JPG}
+\includegraphics[scale=0.45]{\myroot/figures/fbd2.JPG}
 \caption{Backyard Brains RoboRoach Kit FBD}
 \label{fig:FBD2}
 \end{figure}
@@ -185,14 +179,14 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.25]{myo.png}
+\includegraphics[scale=0.25]{\myroot/figures/myo.png}
 \caption{Make Your Own RoboRoach Conceptual Drawing}
 \label{fig:concept3}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.45]{fbd3.JPG}
+\includegraphics[scale=0.45]{\myroot/figures/fbd3.JPG}
 \caption{Make Your Own RoboRoach FBD}
 \label{fig:FBD3}
 \end{figure}
@@ -201,7 +195,7 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.5]{decisionmatrix.JPG}
+\includegraphics[scale=0.5]{\myroot/figures/decisionmatrix.JPG}
 \caption{Decision Matrix}
 \label{fig:DecisionMatrix}
 \end{figure}
@@ -224,7 +218,7 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.5]{ss.JPG}
+\includegraphics[scale=0.5]{\myroot/figures/ss.JPG}
 \caption{TinyPico: Bluetooth and Wifi}
 \label{fig:ss}
 \end{figure}
@@ -236,7 +230,7 @@ Our last source of additional motivation is \cite{mongeau2012rapid}. In \cite{mo
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.4]{morph.JPG}
+\includegraphics[scale=0.4]{\myroot/figures/morph.JPG}
 \caption{Morph Chart}
 \label{fig:morph}
 \end{figure}
@@ -254,13 +248,13 @@ As you can see from the parts list , we have a very wide array of parts needed f
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.65]{budget.JPG}
+\includegraphics[scale=0.65]{\myroot/figures/budget.JPG}
 \caption{Summary of Parts list}
 \label{fig:budget}
 \end{figure}
 
 \begin{figure}
-\includegraphics[scale=0.50]{partlist.JPG}
+\includegraphics[scale=0.50]{\myroot/figures/partlist.JPG}
 \caption{Summary of Parts list}
 \label{fig:partlist}
 \end{figure}
@@ -268,7 +262,7 @@ As you can see from the parts list , we have a very wide array of parts needed f
 \subsection{Mechanical Drawings}
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.60]{mech.JPG}
+\includegraphics[scale=0.60]{\myroot/figures/mech.JPG}
 \caption{Mechanical drawing of system}
 \label{fig:mech}
 \end{figure}
@@ -282,21 +276,21 @@ As you can see from the parts list , we have a very wide array of parts needed f
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.60]{BBschematic.JPG}
+\includegraphics[scale=0.60]{\myroot/figures/BBschematic.JPG}
 \caption{Backyard Brains PCB Schematic}
 \label{fig:bbs}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.4]{TPschematic.JPG}
+\includegraphics[scale=0.4]{\myroot/figures/TPschematic.JPG}
 \caption{TinyPico-based PCB Schematic}
 \label{fig:tps}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.4]{Newbattery.JPG}
+\includegraphics[scale=0.4]{\myroot/figures/Newbattery.JPG}
 \caption{Our Design for a Battery Circuit}
 \label{fig:newbatt}
 \end{figure}
@@ -306,21 +300,21 @@ As you can see from the parts list , we have a very wide array of parts needed f
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.35]{EESCHEMA.JPG}
+\includegraphics[scale=0.35]{\myroot/figures/EESCHEMA.JPG}
 \caption{Prototype of PCB- Schematic View}
 \label{fig:schematic}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.5]{myboard.JPG}
+\includegraphics[scale=0.5]{\myroot/figures/myboard.JPG}
 \caption{Prototype of PCB- Board View}
 \label{fig:board}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.5]{my3dmodel.JPG}
+\includegraphics[scale=0.5]{\myroot/figures/my3dmodel.JPG}
 \caption{Prototype of PCB- 3D Model View}
 \label{fig:3d}
 \end{figure}
@@ -331,7 +325,7 @@ As you can see from the parts list , we have a very wide array of parts needed f
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.4]{pseudocode.JPG}
+\includegraphics[scale=0.4]{\myroot/figures/pseudocode.JPG}
 \caption{Open Loop Pseudocode}
 \label{fig:pseudocode}
 \end{figure}
@@ -346,7 +340,7 @@ Looking at the functional block diagram for our system, the workload can be divi
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.6]{TIMELINE.JPG}
+\includegraphics[scale=0.6]{\myroot/figures/TIMELINE.JPG}
 \caption{Timeline and Tasks}
 \label{fig:timeline}
 \end{figure}
@@ -384,9 +378,9 @@ Our risks are separated into 3 categories: Technical, Business, and Programmatic
 \subsection{Results}
  Although we were unable to produce a physical board for our audience to hold and observe, we were able to produce a design and 3D model. Once we have confirmed that the design is sound, we will order the board. We realized that the TinyPico is difficult to work with, so we have begun searching for alternative microcontrollers that are I2C compatible just in case the TinyPico ends up being too difficult to work with.
 
-\section{Acknowledgements}
+\section*{Acknowledgements}
 We thank our advisor Professor Evangelista for his comments and discussion that helped our thinking on our project, as well as for his assistance and discussions in the course of EW496. We thank our customer Professor DeVries for his input throughout the entire first half of EW401. We thank Mr. Bradshaw and Mr. McCorkell from TSD for their feedback, suggestions, and assistance with our PCB design, as well as MIDN 2/C Jeremy Wolfe for using his personal experience and devoting his personal time to helping us design our PCB in KiCAD. This project is funded by Lockheed Martin biomechanics gift funds. 
 
 \bibliographystyle{IEEEtran}
-\bibliography{roboroach.bib}
+\bibliography{IEEEabrv,\myroot/references/roboroach.bib}
 \end{document}
